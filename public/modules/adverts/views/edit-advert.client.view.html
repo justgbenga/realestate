@@ -1,0 +1,96 @@
+<section data-ng-controller="AdvertsController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Advert</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate >
+              <fieldset>
+                <legend>Edit advert</legend>
+                    <div class="form-group">
+                        <label for="region" class="col-sm-3 control-label">Region</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="region" data-ng-model="advert.region" required>
+                                <option value="Alsace">Alsace</option>
+                                <option value="Aquitaine">Aquitaine</option>
+                                <option value="Auvergne">Auvergne</option>
+                                <option value="Basse Normandie">Basse-Normandie</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="postcode" class="col-sm-3 control-label">Postcode</label>
+                      <div class="col-sm-8">
+                        <input type="number" class="form-control" id="postcode" data-ng-model="advert.postcode" placeholder="" required>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="city" class="col-sm-3 control-label">City</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="postcode" data-ng-model="advert.city" placeholder="" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="name" class="col-sm-3 control-label">Name</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="name" data-ng-model="advert.name" placeholder="put your name here" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="email" class="col-sm-3 control-label">Email</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control" id="email" data-ng-model="advert.email" placeholder="place your email here" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone" class="col-sm-3 control-label">Phone</label>
+                      <div class="col-sm-8">
+                        <input type="number" class="form-control" id="phone" data-ng-model="advert.phone" placeholder="0756565656" required>
+                      </div>
+                    </div>
+                       <div class="form-group">
+                          <label for="title" class="col-sm-3 control-label">Title</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="title" data-ng-model="advert.title" placeholder="title of the advert">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="type" class="col-sm-3 control-label">Property</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="type" data-ng-model="advert.type" required>
+                                    <option value="apartement">Apartement</option>
+                                    <option value="house">House</option>
+                                    <option value="building">building</option>
+                                </select>
+                            </div>
+                        </div>
+
+                         <div class="form-group">
+                          <label for="description" class="col-sm-3 control-label">Description</label>
+                          <div class="col-sm-8">
+                            <textarea class="form-control" rows="3" data-ng-model="advert.description"></textarea>
+                          </div>
+                        </div>
+
+                       <div class="form-group">
+                          <label for="price" class="col-sm-3 control-label">Price</label>
+                          <div class="col-sm-8">
+                            <input type="number" class="form-control" id="price" placeholder="price" data-ng-model="advert.price">
+                          </div>
+                        </div>
+
+
+                    <div class="form-group">
+                      <div class="col-sm-offset-3 col-sm-8">
+                        <input type="submit" value="Update" class="btn btn-default">
+                      </div>
+                    </div>   
+                    <div data-ng-show="error" class="text-danger">
+                      <strong data-ng-bind="error"></strong>
+                    </div>     
+                </fieldset>
+        </form>
+    </div>
+</section>

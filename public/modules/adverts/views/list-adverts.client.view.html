@@ -1,0 +1,33 @@
+<section data-ng-controller="AdvertsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Adverts</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-info">
+            <a data-ng-repeat="advert in adverts" data-ng-href="#!/adverts/{{advert._id}}" class="list-group-item">
+                <span class="titre-annonce" data-ng-bind="advert.title"></span>
+                <br/>
+                <span data-ng-bind="advert.region"></span>
+                <br/>
+                <span data-ng-bind="advert.city"></span>
+                <br/>
+                <br/>
+                <span class="annonce-price"data-ng-bind="advert.price"></span>
+                <span class="annonce-price"> $</span>
+                <br/>
+                <br/>
+                <small class="list-group-item-text">
+                    Posted on
+                    <span data-ng-bind="advert.created | date:'medium'"></span>
+                    by
+                    <span data-ng-bind="advert.user.displayName"></span>
+                </small>        
+            </a>
+        </div>  
+        <div class="col-sm-6">
+        </div>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!adverts.$resolved || adverts.length">
+    	No Adverts yet, why don't you <a href="/#!/adverts/create">create one</a>?
+    </div>
+</section>
