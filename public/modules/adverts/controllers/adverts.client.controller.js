@@ -4,7 +4,8 @@
 angular.module('adverts').controller('AdvertsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Adverts',
 	function($scope, $stateParams, $location, Authentication, Adverts) {
 		$scope.authentication = Authentication;
-
+		$scope.addForm = {url: 'modules/adverts/views/create-advert.client.view.html', show: true};
+		
 		// Create new Advert
 		$scope.create = function() {
 			// Create new Advert object

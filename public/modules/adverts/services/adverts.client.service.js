@@ -10,4 +10,19 @@ angular.module('adverts').factory('Adverts', ['$resource',
 			}
 		});
 	}
+])
+.factory('d3', ['$window',
+	    function($window) {
+	        return $window.d3;
+	    }
+	])
+.factory('shapes', ['$window',
+    function($window) {
+        return $window.shapes;
+    }
+])
+.factory('$', ['$window',
+    function($window) {
+        return $window.$;
+    }
 ]);
