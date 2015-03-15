@@ -10,6 +10,9 @@ var mongoose = require('mongoose'),
  * Advert Schema
  */
 var AdvertSchema = new Schema({
+	buildingId :{
+		type: String
+	},
 	region : {
 		type: String,
 		default:'Seine Maritime'

@@ -14,6 +14,10 @@ module.exports = function(app) {
 		.put(users.requiresLogin, adverts.hasAuthorization, adverts.update)
 		.delete(users.requiresLogin, adverts.hasAuthorization, adverts.delete);
 
+	app.route('/adverts/building/:buildingId')
+		.get(adverts.read)
+
 	// Finish by binding the Advert middleware
 	app.param('advertId', adverts.advertByID);
+	app.param('buildingId', adverts.advertByBuildingId);
 };

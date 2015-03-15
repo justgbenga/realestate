@@ -1,11 +1,15 @@
-<section data-ng-controller="AdvertsController">
+<section data-ng-controller="AdvertsController" data-ng-init="showHideFrom()">
 	<br/>
 	
-	<div class="text-center">
-		<div class="addform" data-ng-include="addForm.url" data-ng-show="addForm.show">
+		<div id="addForm" class="addform" data-ng-include="addForm.url" data-ng-show="addForm.show">
 			Here
 		</div>
-		<osinuga> </osinuga>
+	<div id="formcontainer" class="text-center">
+		<div  class="pull-right">
+			<osinuga> </osinuga>
+		</div>
+		
 	</div>
+</section>
 
 																																																																																																																																																																																																																																																																																																																																																																																																																																													

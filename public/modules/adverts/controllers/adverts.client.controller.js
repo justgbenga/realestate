@@ -4,12 +4,22 @@
 angular.module('adverts').controller('AdvertsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Adverts',
 	function($scope, $stateParams, $location, Authentication, Adverts) {
 		$scope.authentication = Authentication;
-		$scope.addForm = {url: 'modules/adverts/views/create-advert.client.view.html', show: true};
+		$scope.addForm = {url: 'modules/adverts/views/create-advert.client.view.html', show: false};
 		
+		$scope.showHideFrom = function(){
+			$(document).ready(function()
+			{
+			    $("#formcontainer").mouseup(function(e)
+			    {
+			        $("#addForm").fadeOut();
+			    });
+			});
+		}
 		// Create new Advert
 		$scope.create = function() {
 			// Create new Advert object
 			var advert = new Adverts ({
+				buildingId: $scope.selectedID_,
 				name: this.name,
 				region:this.region,
 				city:this.city,

@@ -5,14 +5,6 @@ angular.module('adverts')
 	function ($http,shapes,d3,$){
 
 
-	function toggleForm(){
-	    var form = document.getElementById('form');
-	  	    if(form.style.display == 'block'){
-	        form.style.display = 'none';
-	    }else{
-	        form.style.display = 'block';
-	    }
-	}
 	return {
 		restrict : 'E',
 		link: function(scope,element) 
@@ -53,10 +45,20 @@ angular.module('adverts')
 							.classed('buildings',1)
 							.attr('d', function(d){return d.toSvgPath();})
 							.attr('id',function(d){return d.getId();})
-							.on('click', function(d, i){
+							.on('click', function(d){
 					          	scope.selectedID_   = d.getId();
 					          	scope.selectedArea_ = d.getArea();
 					          	scope.$apply();
+
+
+								$http.get('/adverts/building/'+d.getId())
+								.success(function (advert) {
+						          	scope.addForm.show = false;
+						          	console.log('Here');
+								}).error(function (err) {
+									scope.addForm.show = true;
+									$("#addForm").fadeIn();
+								});
 
 					        });
 
